@@ -1,0 +1,26 @@
+{
+  "comment": "",
+  "name": "aaa",
+  "owners": [
+    "local.master"
+  ],
+  "filter_aaaa": "no",
+  "recursion_enable": "yes",
+  "allow_recursive": "all",
+  "non_recursive_acls": [],
+  "ecs_recurse_domains": [],
+  "ecs_exact_match": "no",
+  "bind_ips": [
+    "0.0.0.0"
+  ],
+  "fail_forwarder": "",
+  "dns64s": [],
+  "limit_ips": [],
+  "need_tsig_key": "no",
+  "acls": [],
+  "black_acls": [],
+  "filter_aaaa_ips": [
+    "any"
+  ],
+  "tsig_host": []
+}

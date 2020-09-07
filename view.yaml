@@ -1,0 +1,186 @@
+openapi: 3.0.0
+servers:
+  - url: 'http://localhost:8088'
+info:
+  description: This is a simple API
+  version: '3.12'
+  title: Simple Inventory API
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: views
+    description: views
+paths:
+  /views:
+    get:
+      tags:
+        - views
+      summary: List Views
+      description: list views
+      operationId: listViews
+      parameters:
+        - name: total_size
+          in: query
+          description: collection total amount
+          schema:
+            type: integer
+            minimum: 0
+            example: 1
+        - name: page_num
+          in: query
+          description: collection total amount
+          schema:
+            type: integer
+            minimum: 1
+            example: 1
+        - name: page_size
+          in: query
+          description: collection total amount
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 1000
+            example: 30
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_size:
+                    type: integer
+                  page_num:
+                    type: integer
+                  page_size:
+                    type: integer
+                  resources:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/View"
+                      
+    post:
+      tags:
+        - views
+      sumary: Create View
+      description: create view
+      operationId: createView
+      requestBody:
+        # required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/schemas/View"
+      response:
+        200:
+          description: successful create a view
+components:
+  schemas:
+    View:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        acls:
+          type: array
+          items:
+            type: string
+        allow_recursive:
+          type: string
+        backup_query_sources:
+          type: array
+          items:
+            type: string
+        bind_ips:
+          type: array
+          items:
+            type: string
+        black_acls:
+          type: array
+          items:
+            type: string
+        comment:
+          type: string
+        dns64s:
+          type: array
+          items:
+            type: string
+        ecs_exact_match:
+          type: string
+        ecs_recurse_domains:
+          type: array
+          items:
+            type: string
+        fail_forwarder:
+          type: string
+        filter_aaaa:
+          type: string
+        filter_aaaa_exempt:
+          type: array
+          items:
+            type: string
+        filter_aaaa_ips:
+          type: array
+          items:
+            type: string
+        forward_zones:
+          type: array
+          items:
+            type: string
+        href:
+          type: string
+        limit_ips:
+          type: array
+          items:
+            type: string
+        need_tsig_key:
+          type: string
+        non_recursive_acls:
+          type: array
+          items:
+            type: string
+        owners:
+          type: array
+          items:
+            type: string
+        priority:
+          type: integer
+        query_source:
+          type: string
+        recursion_enable:
+          type: string
+        recursive_acls:
+          type: array
+          items:
+            type: string
+        state:
+          type: string
+        stub_zones:
+          type: array
+          items:
+            type: string
+        try_final_after_forward:
+          type: string
+        tsig_algorithm:
+          type: string
+        tsig_host:
+          type: array
+          items:
+            type: string
+        tsig_name:
+          type: string
+        tsig_secret:
+          type: string
+        working_query_source:
+          type: string
+        zones:
+          type: array
+          items:
+            type: string
