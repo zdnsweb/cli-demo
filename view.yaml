@@ -66,17 +66,34 @@ paths:
     post:
       tags:
         - views
-      sumary: Create View
+      summary: Create View
       description: create view
       operationId: createView
       requestBody:
-        # required: true
+        required: true
         content:
           application/json:
             schema:
-              type: object
               $ref: "#/components/schemas/View"
-      response:
+      responses:
+        200:
+          description: successful create a view
+    delete:
+      tags:
+        - views
+      summary: Delete View
+      description: delete view
+      operationId: deleteView
+      parameters:
+        - name: ids
+          in: query
+          required: true
+          description: ids of views is going to be delete
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
         200:
           description: successful create a view
 components:
