@@ -8,3 +8,7 @@ build: generate
 generate:
 	@echo "Generate api"
 	@for f in $$(ls *.yaml); do echo "Generate $$f"; openapi-cli-generator generate $$f; done
+
+init:
+	go get -u github.com/danielgtaylor/openapi-cli-generator
+	#go get -u github.com/go-bindata/go-bindata/...
