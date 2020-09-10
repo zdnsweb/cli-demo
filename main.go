@@ -17,6 +17,7 @@ func main() {
 
 	// TODO: Add register commands here.
     viewRegister(false)
+    completionRegister()
 
 
     // Register a request middleware handler to print the path.
