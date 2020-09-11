@@ -3,7 +3,7 @@ module github.com/zdnsweb/cli-demo
 go 1.15
 
 require (
-	github.com/c-bata/go-prompt v0.2.3 // indirect
+	github.com/c-bata/go-prompt v0.2.3
 	github.com/danielgtaylor/openapi-cli-generator v0.0.0-20200228065623-fa97dc37f943
 	github.com/pkg/errors v0.9.1
 	github.com/pkg/term v0.0.0-20200520122047-c3ffed290a03 // indirect
