@@ -16,8 +16,8 @@ func main() {
 	})
 
 	// TODO: Add register commands here.
-    viewRegister(false)
-    completionRegister()
+	viewRegister(false)
+	completionRegister()
 
 
     // Register a request middleware handler to print the path.
@@ -36,6 +36,7 @@ func main() {
         // fmt.Printf("Response body: %s\n", body)
 	    h.Next(ctx)
     })
+
 
 	cli.Root.Execute()
 }

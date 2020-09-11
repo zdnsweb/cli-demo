@@ -2,7 +2,8 @@ default: build
 
 build: generate
 	@echo "Building ..."
-	@CGO_ENABLE=0 go build -o zddi 
+	@CGO_ENABLE=0 go build -o zddi
+	@CGO_ENABLE=0 go build -o zddi_prompt prompt/main.go
 	@echo "Build success"
 
 generate:
